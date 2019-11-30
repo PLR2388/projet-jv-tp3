@@ -1,0 +1,3 @@
+JoystickButton2
+JoystickButton1
+JoystickButton3
