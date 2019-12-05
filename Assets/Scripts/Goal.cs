@@ -63,6 +63,7 @@ public class Goal : MonoBehaviour
         /**But du joueur 1**/
         if (other.transform.position.x < milieuTerrain)
         {
+            FindObjectOfType<AudioManager>().play("goal");
             GameObject nouveau=Instantiate(Puck,positionInit,Quaternion);
             Destroy(Puck);
             Puck = nouveau;
@@ -73,6 +74,7 @@ public class Goal : MonoBehaviour
         /**But du joueur 2 ou de l'IA**/
         if (other.transform.position.x > milieuTerrain)
         {
+            FindObjectOfType<AudioManager>().play("goal");
             GameObject nouveau=Instantiate(Puck,positionInit,Quaternion);
             Destroy(Puck);
             Puck = nouveau;

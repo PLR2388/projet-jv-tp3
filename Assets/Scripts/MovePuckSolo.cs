@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 public class MovePuckSolo : MonoBehaviour
@@ -21,6 +22,7 @@ public class MovePuckSolo : MonoBehaviour
     private int vitesseBump = 20;
     private int nombreDecimal = 2;
     public GameObject IA;
+    public AudioSource audioSource;
     
     // Start is called before the first frame update
     void Start()
@@ -99,15 +101,19 @@ public class MovePuckSolo : MonoBehaviour
             gameObject.transform.position.z - other.transform.position.z);
         if (other.gameObject.name == "Player1" && other.gameObject.transform.position.x<positionBumpJ1)
         {
+            FindObjectOfType<AudioManager>().play("puckHit");
             velocity = vitesseBump * direction;
         }
         else if (other.gameObject.name == "Player2" && other.gameObject.transform.position.x>positionBumpJ2)
         {
+            FindObjectOfType<AudioManager>().play("puckHit");
             velocity = vitesseBump * direction;
         }
         else if (other.gameObject.name == "Player1" || other.gameObject.name=="Player2")
         {
+            FindObjectOfType<AudioManager>().play("puckHit");
             velocity =vitesseNormal*direction;
+            
         }
         
     }
