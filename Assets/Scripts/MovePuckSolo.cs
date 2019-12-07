@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 public class MovePuckSolo : MonoBehaviour
@@ -22,7 +21,6 @@ public class MovePuckSolo : MonoBehaviour
     private int vitesseBump = 20;
     private int nombreDecimal = 2;
     public GameObject IA;
-    public AudioSource audioSource;
     
     // Start is called before the first frame update
     void Start()

@@ -55,14 +55,17 @@ public class MovePuck : MonoBehaviour
        if (other.gameObject.name == "Player1" && other.gameObject.transform.position.x<positionBumpJ1)
         {
             velocity = vitesseBump * direction;
+            FindObjectOfType<AudioManager>().play("puckHit");
         }
         else if (other.gameObject.name == "Player2" && other.gameObject.transform.position.x>positionBumpJ2)
         {
             velocity = vitesseBump * direction;
+            FindObjectOfType<AudioManager>().play("puckHit");
         }
         else if (other.gameObject.name == "Player1" || other.gameObject.name=="Player2")
         {
             velocity =vitesseNormal*direction;
+            FindObjectOfType<AudioManager>().play("puckHit");
         }
         
     }
