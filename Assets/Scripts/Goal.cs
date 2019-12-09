@@ -15,6 +15,8 @@ public class Goal : MonoBehaviour
      private float milieuTerrain = -8.463f;
      public GameObject Puck;
 
+     public GameObject pupet;
+     
      private GameObject controlSettingObject;
      public GameObject PadIA;
      private int scoreJ1;
@@ -35,6 +37,7 @@ public class Goal : MonoBehaviour
         positionInit = Puck.transform.position;
         scoreJ1 = 0;
         scoreJ2 = 0;
+        pupet = GameObject.FindGameObjectWithTag("Puppet");
         controlSettingObject = GameObject.FindGameObjectWithTag("ControlSettingObject");
         switch (controlSettingObject.GetComponent<ControlSettingSc>().level)
         {
@@ -60,9 +63,12 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+       
         /**But du joueur 1**/
         if (other.transform.position.x < milieuTerrain)
         {
+            pupet.GetComponent<Animator>().SetTrigger("defeat");
+            
             FindObjectOfType<AudioManager>().play("goal");
             GameObject nouveau=Instantiate(Puck,positionInit,Quaternion);
             Destroy(Puck);
@@ -74,6 +80,9 @@ public class Goal : MonoBehaviour
         /**But du joueur 2 ou de l'IA**/
         if (other.transform.position.x > milieuTerrain)
         {
+
+            pupet.GetComponent<Animator>().SetTrigger("win");
+            
             FindObjectOfType<AudioManager>().play("goal");
             GameObject nouveau=Instantiate(Puck,positionInit,Quaternion);
             Destroy(Puck);
@@ -91,6 +100,7 @@ public class Goal : MonoBehaviour
         }
         else if (scoreJ2 == scoreToWin)
         {
+            
             Time.timeScale = 0;
             ResultJ2.text = "Tu as gagne!";
             ResultJ1.text = "Tu as perdu!";
