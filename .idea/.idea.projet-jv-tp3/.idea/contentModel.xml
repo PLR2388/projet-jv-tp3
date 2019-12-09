@@ -10,7 +10,9 @@
           <e p="_README.txt" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="ApplyCustom.cs" t="Include" />
           <e p="AudioManager.cs" t="Include" />
+          <e p="ChangeCustom.cs" t="Include" />
           <e p="ControlSettingSc.cs" t="Include" />
           <e p="Goal.cs" t="Include" />
           <e p="IACharacteristic.cs" t="Include" />
@@ -24,6 +26,7 @@
           <e p="OnePlayerMenuScript.cs" t="Include" />
           <e p="OptionMenuScript.cs" t="Include" />
           <e p="PauseMenuScript.cs" t="Include" />
+          <e p="PersonnalisationMenuScript.cs" t="Include" />
           <e p="RandomMoveIA.cs" t="Include" />
           <e p="ScriptedIA.cs" t="Include" />
           <e p="SmartIA.cs" t="Include" />

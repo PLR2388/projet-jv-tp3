@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,8 +8,14 @@ public class PauseMenuScript : MonoBehaviour
 {
     public GameObject PauseMenu;
     bool gamePause=false;
+    private GameObject controlSettingObject;
 
-     // Update is called once per frame
+    private void Start()
+    {
+        controlSettingObject = GameObject.FindGameObjectsWithTag("ControlSettingObject")[0];
+    }
+
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -51,7 +58,9 @@ public class PauseMenuScript : MonoBehaviour
         {
             yield return null;
             gameObject.SetActive(false);
+        
         }
+        SceneManager.UnloadSceneAsync("OnePlayer");
     }
     
 }

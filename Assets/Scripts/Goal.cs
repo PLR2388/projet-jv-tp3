@@ -93,15 +93,14 @@ public class Goal : MonoBehaviour
 
         if (scoreJ1 == scoreToWin)
         {
-            Time.timeScale = 0;
+            Destroy(Puck);
             ResultJ1.text = "Tu as gagne!";
             ResultJ2.text = "Tu as perdu!";
             StartCoroutine(BackMainMenu());
         }
         else if (scoreJ2 == scoreToWin)
         {
-            
-            Time.timeScale = 0;
+            Destroy(Puck);
             ResultJ2.text = "Tu as gagne!";
             ResultJ1.text = "Tu as perdu!";
             StartCoroutine(BackMainMenu());
@@ -132,13 +131,13 @@ public class Goal : MonoBehaviour
             }
             
         }
-        Time.timeScale = 1;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MenuScene", LoadSceneMode.Additive);
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
+        SceneManager.MoveGameObjectToScene(controlSettingObject, SceneManager.GetSceneByName("MenuScene"));
         SceneManager.UnloadSceneAsync(sameName);
     }
 }

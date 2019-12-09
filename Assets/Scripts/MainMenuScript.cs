@@ -8,23 +8,42 @@ public class MainMenuScript : MonoBehaviour
     public GameObject optionMenu;
     public GameObject playerOneMenu;
     public GameObject controlSettingObject;
+    public GameObject personnalisationMenu;
     
     // Start is called before the first frame update
     void Start()
     {
         optionMenu.SetActive(false);
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("ControlSettingObject");
+
+        if (objs.Length > 1)
+        {
+            Destroy(objs[0]);
+        }
+
+        DontDestroyOnLoad(controlSettingObject);
     }
 
     public void mainMenuToOption()
     {
+        personnalisationMenu.SetActive(false);
         optionMenu.SetActive(true);
         gameObject.SetActive(false);
     }
 
     public void MainMenuToOnePlayer()
     {
+        personnalisationMenu.SetActive(false);
         playerOneMenu.SetActive(true);
         gameObject.SetActive(false);
+    }
+
+    public void MainMenuToPersonnalisation()
+    {
+        playerOneMenu.SetActive(false);
+        personnalisationMenu.SetActive(true);
+        gameObject.SetActive(false);
+        
     }
 
     public void MainMenuToTwoPlayer()

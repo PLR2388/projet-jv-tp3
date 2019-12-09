@@ -8,6 +8,7 @@ TagManager:
   - Puck
   - NameIA
   - Puppet
+  - Custom
   layers:
   - Default
   - TransparentFX

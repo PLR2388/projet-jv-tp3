@@ -13,7 +13,7 @@ public class IACharacteristic : MonoBehaviour
     void Start()
     {
         GameObject[] listPuppet = GameObject.FindGameObjectsWithTag("Puppet");
-        controlSettingObject = GameObject.FindGameObjectWithTag("ControlSettingObject");
+        controlSettingObject = GameObject.FindGameObjectsWithTag("ControlSettingObject")[0];
         switch (controlSettingObject.GetComponent<ControlSettingSc>().level)
         {
             case 0:
