@@ -12,7 +12,7 @@ public class PauseMenuScript : MonoBehaviour
 
     private void Start()
     {
-        controlSettingObject = GameObject.FindGameObjectsWithTag("ControlSettingObject")[0];
+        controlSettingObject = GameObject.FindGameObjectWithTag("ControlSettingObject");
     }
 
     // Update is called once per frame
@@ -48,6 +48,7 @@ public class PauseMenuScript : MonoBehaviour
     public void PauseToMainMenu()
     {
         Time.timeScale = 1;
+        FindObjectOfType<AudioManager>().switchScene("BattleMainTheme", "MainTheme");
         StartCoroutine(LoadYourAsyncScene());
     }
     

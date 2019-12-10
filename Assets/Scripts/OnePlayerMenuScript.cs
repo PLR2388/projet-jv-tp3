@@ -37,6 +37,7 @@ public class OnePlayerMenuScript : MonoBehaviour
             yield return null;
         }
         SceneManager.MoveGameObjectToScene(controlSettingObject, SceneManager.GetSceneByName("OnePlayer"));
+        FindObjectOfType<AudioManager>().switchScene("MainTheme", "BattleMainTheme");
         SceneManager.UnloadSceneAsync("MenuScene");
     }
     
@@ -53,6 +54,7 @@ public class OnePlayerMenuScript : MonoBehaviour
             yield return null;
         }
         SceneManager.MoveGameObjectToScene(controlSettingObject, SceneManager.GetSceneByName("OnePlayer"));
+        FindObjectOfType<AudioManager>().switchScene("MainTheme", "BattleMainTheme");
         SceneManager.UnloadSceneAsync("MenuScene");
     }
     
@@ -69,6 +71,7 @@ public class OnePlayerMenuScript : MonoBehaviour
             yield return null;
         }
         SceneManager.MoveGameObjectToScene(controlSettingObject, SceneManager.GetSceneByName("OnePlayer"));
+        FindObjectOfType<AudioManager>().switchScene("MainTheme", "BattleMainTheme");
         SceneManager.UnloadSceneAsync("MenuScene");
     }
     public void PlayerOneMenuToCortex()
@@ -84,6 +87,7 @@ public class OnePlayerMenuScript : MonoBehaviour
             yield return null;
         }
         SceneManager.MoveGameObjectToScene(controlSettingObject, SceneManager.GetSceneByName("OnePlayer"));
+        FindObjectOfType<AudioManager>().switchScene("MainTheme", "BattleMainTheme");
         SceneManager.UnloadSceneAsync("MenuScene");
     }
     public void PlayerOneMenuToSylvain()
@@ -99,6 +103,7 @@ public class OnePlayerMenuScript : MonoBehaviour
             yield return null;
         }
         SceneManager.MoveGameObjectToScene(controlSettingObject, SceneManager.GetSceneByName("OnePlayer"));
+        FindObjectOfType<AudioManager>().switchScene("MainTheme", "BattleMainTheme");
         SceneManager.UnloadSceneAsync("MenuScene");
     }
 

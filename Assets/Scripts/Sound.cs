@@ -9,6 +9,7 @@ public class Sound
     public float volume;
     [Range(0.1f, 3f)]
     public float pitch;
+    public bool loop;
 
     private AudioSource audioSource;
 
@@ -18,6 +19,7 @@ public class Sound
         audioSource.clip = audioClip;
         audioSource.volume = volume;
         audioSource.pitch = pitch;
+        audioSource.loop = loop;
     }
 
     public void Play(string name)
@@ -27,6 +29,14 @@ public class Sound
             audioSource.Play();
         }
         
+    }
+
+    public void Stop(string name)
+    {
+        if (audioClip.name.Equals(name))
+        {
+            audioSource.Stop();
+        }
     }
 
 }

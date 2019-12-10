@@ -110,6 +110,7 @@ public class Goal : MonoBehaviour
     IEnumerator BackMainMenu()
     {
         yield return new WaitUntil(() => Input.anyKey);
+        FindObjectOfType<AudioManager>().switchScene("BattleMainTheme", "MainTheme");
         string sameName = SceneManager.GetActiveScene().name;
         if (sameName == "OnePlayer" && ResultJ1.text=="Tu as gagne!")
         {
@@ -137,7 +138,7 @@ public class Goal : MonoBehaviour
         {
             yield return null;
         }
-        SceneManager.MoveGameObjectToScene(controlSettingObject, SceneManager.GetSceneByName("MenuScene"));
+        //SceneManager.MoveGameObjectToScene(controlSettingObject, SceneManager.GetSceneByName("MenuScene"));
         SceneManager.UnloadSceneAsync(sameName);
     }
 }

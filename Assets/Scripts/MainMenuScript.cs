@@ -14,14 +14,7 @@ public class MainMenuScript : MonoBehaviour
     void Start()
     {
         optionMenu.SetActive(false);
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("ControlSettingObject");
-
-        if (objs.Length > 1)
-        {
-            Destroy(objs[0]);
-        }
-
-        DontDestroyOnLoad(controlSettingObject);
+        controlSettingObject = GameObject.FindGameObjectWithTag("ControlSettingObject");
     }
 
     public void mainMenuToOption()
@@ -49,6 +42,7 @@ public class MainMenuScript : MonoBehaviour
     public void MainMenuToTwoPlayer()
     {
         SceneManager.LoadScene("Loading", LoadSceneMode.Additive);
+        FindObjectOfType<AudioManager>().switchScene("MainTheme", "BattleMainTheme");
         StartCoroutine(LoadYourAsyncScene());
     }
     
