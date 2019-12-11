@@ -55,5 +55,27 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public float getMusicVolume(string name)
+    {
+        float? returned = null;
+        foreach (Sound sound in soundList)
+        {
+            returned = sound.getVolume(name);
+            if(returned != null)
+            {
+                break;
+            }
+        }
+        return returned ?? 0f;
+    }
+
+    public void setMusicVolume(string name, float volume)
+    {
+        foreach (Sound sound in soundList)
+        {
+            sound.setVolume(name, volume);
+        }
+    }
+
 
 }

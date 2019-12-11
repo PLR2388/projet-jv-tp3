@@ -1,5 +1,6 @@
 ﻿using UnityEngine.Audio;
 using UnityEngine;
+using System;
 
 [System.Serializable]
 public class Sound 
@@ -39,4 +40,23 @@ public class Sound
         }
     }
 
+    public float? getVolume(string name)
+    {
+        if (audioClip.name.Equals(name))
+        {
+            return audioSource.volume;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    internal void setVolume(string name, float volume)
+    {
+        if (audioClip.name.Equals(name))
+        {
+            audioSource.volume = volume;
+        }
+    }
 }
