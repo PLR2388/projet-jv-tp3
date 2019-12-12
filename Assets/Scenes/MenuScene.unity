@@ -1069,6 +1069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderMusic: {fileID: 613691059}
+  sliderSFX: {fileID: 0}
   BackGroundMusic: MainTheme
 --- !u!4 &214240865
 Transform:
@@ -2925,18 +2926,38 @@ MonoBehaviour:
   - audioClip: {fileID: 8300000, guid: 2f24ce2c4318f774fbf4393b84461f3c, type: 3}
     volume: 0.2
     pitch: 1
+    SpacialSoundLeftRight: 0
+    SpacialSoundCloseFar: 0
     loop: 1
   - audioClip: {fileID: 8300000, guid: 1cd7ad7d43a33044aaa175164931ea8b, type: 3}
     volume: 0.2
     pitch: 1
+    SpacialSoundLeftRight: 0
+    SpacialSoundCloseFar: 0
     loop: 0
   - audioClip: {fileID: 8300000, guid: aef78aa849c47394b881d59abef9454d, type: 3}
     volume: 0.2
     pitch: 1
+    SpacialSoundLeftRight: 0
+    SpacialSoundCloseFar: 0
     loop: 1
   - audioClip: {fileID: 8300000, guid: 7e2d96d412fbd534690307cfd2ecde0c, type: 3}
     volume: 0.2
     pitch: 1
+    SpacialSoundLeftRight: 0
+    SpacialSoundCloseFar: 0
+    loop: 0
+  - audioClip: {fileID: 8300000, guid: f5aef800303c1214fa36f7df690e7c86, type: 3}
+    volume: 0.2
+    pitch: 1
+    SpacialSoundLeftRight: 0
+    SpacialSoundCloseFar: 0
+    loop: 0
+  - audioClip: {fileID: 8300000, guid: bcbe5e0301444644cbba2283221cfd2c, type: 3}
+    volume: 0.2
+    pitch: 1
+    SpacialSoundLeftRight: 0
+    SpacialSoundCloseFar: 0
     loop: 0
 --- !u!4 &529984064
 Transform:

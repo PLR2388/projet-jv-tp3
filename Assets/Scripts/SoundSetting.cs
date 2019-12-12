@@ -33,5 +33,11 @@ public class SoundSetting : MonoBehaviour
     {
         audioManager.setMusicVolume("puckHit", sliderSFX.value);
         audioManager.setMusicVolume("goal", sliderSFX.value);
+        audioManager.setMusicVolume("WallHit", sliderSFX.value);
+    }
+
+    public void Fooley()
+    {
+
     }
 }

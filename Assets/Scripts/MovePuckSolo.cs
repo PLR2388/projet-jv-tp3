@@ -45,6 +45,8 @@ public class MovePuckSolo : MonoBehaviour
             if (transform.position.z <= positionLimiteZmin ||transform.position.z >= positionLimiteZmax)
             {
                 velocity=new Vector3(velocity.x,0,-velocity.z);
+                if(transform.position.z <= positionLimiteZmin) FindObjectOfType<AudioManager>().SpacialPlay("WallHit", -1f);
+                else if (transform.position.z >= positionLimiteZmax) FindObjectOfType<AudioManager>().SpacialPlay("WallHit", 1f);
             }
 
             if (transform.position.x >=positionLimiteXmax ||transform.position.x <=positionLimiteXmin)
@@ -81,6 +83,8 @@ public class MovePuckSolo : MonoBehaviour
                 if (transform.position.z <= positionLimiteZmin ||transform.position.z >= positionLimiteZmax)
                 {
                     velocity=new Vector3(velocity.x,0,-velocity.z);
+                    if (transform.position.z <= positionLimiteZmin) FindObjectOfType<AudioManager>().SpacialPlay("WallHit", -1f);
+                    else if (transform.position.z >= positionLimiteZmax) FindObjectOfType<AudioManager>().SpacialPlay("WallHit", 1f);
                 }
 
                 if (transform.position.x >=positionLimiteXmax ||transform.position.x <=positionLimiteXmin)

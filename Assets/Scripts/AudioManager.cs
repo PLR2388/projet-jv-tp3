@@ -1,5 +1,6 @@
 ﻿using UnityEngine.Audio;
 using UnityEngine;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
@@ -77,5 +78,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void SpacialPlay(string name, float sense)
+    {
+        foreach (Sound sound in soundList)
+        {
+            sound.PlaySpacial(name, sense);
+        }
+    }
 
+    public void PlaySpacialFooley(string name, float distance, float place)
+    {
+        foreach (Sound sound in soundList)
+        {
+            sound.PlaySpacialFooley(name, distance, place);
+        }
+    }
 }

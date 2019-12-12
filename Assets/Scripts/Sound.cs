@@ -10,6 +10,10 @@ public class Sound
     public float volume;
     [Range(0.1f, 3f)]
     public float pitch;
+    [Range(-1f,1f)]
+    public float SpacialSoundLeftRight;
+    [Range(0f,1f)]
+    public float SpacialSoundCloseFar;
     public bool loop;
 
     private AudioSource audioSource;
@@ -21,6 +25,8 @@ public class Sound
         audioSource.volume = volume;
         audioSource.pitch = pitch;
         audioSource.loop = loop;
+        audioSource.panStereo = SpacialSoundLeftRight;
+        audioSource.spatialBlend = SpacialSoundCloseFar;
     }
 
     public void Play(string name)
@@ -57,6 +63,25 @@ public class Sound
         if (audioClip.name.Equals(name))
         {
             audioSource.volume = volume;
+        }
+    }
+
+    internal void PlaySpacial(string name, float sense)
+    {
+        if (audioClip.name.Equals(name))
+        {
+            audioSource.panStereo = sense;
+            audioSource.Play();
+        }
+    }
+
+    internal void PlaySpacialFooley(string name, float distance, float place)
+    {
+        if (audioClip.name.Equals(name))
+        {
+            audioSource.panStereo = place;
+            audioSource.spatialBlend = distance;
+            audioSource.Play();
         }
     }
 }
