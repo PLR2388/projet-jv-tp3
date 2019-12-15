@@ -84,4 +84,13 @@ public class Sound
             audioSource.Play();
         }
     }
+
+    public void SpacialFooley(string name, float distance, float place)
+    {
+        if (audioClip.name.Equals(name))
+        {
+            audioSource.panStereo = place;
+            audioSource.spatialBlend = distance;
+        }
+    }
 }

@@ -1324,7 +1324,18 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1735037895}
+        m_MethodName: Fooley
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &759863593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,6 +2858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frequancy: 150
+  foley: 
 --- !u!4 &1634127897
 Transform:
   m_ObjectHideFlags: 0
@@ -3278,6 +3290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderMusic: {fileID: 1895121290}
   sliderSFX: {fileID: 343384333}
+  sliderFolley: {fileID: 732521260}
   BackGroundMusic: BattleMainTheme
 --- !u!1 &1743730075
 GameObject:
