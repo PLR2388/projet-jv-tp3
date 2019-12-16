@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,9 @@ public class MainMenuScript : MonoBehaviour
     public GameObject playerOneMenu;
     public GameObject controlSettingObject;
     public GameObject personnalisationMenu;
+    private bool animationRotation=false;
+    private float time=0f;
+    public GameObject ancreOnePlayer;
     
     // Start is called before the first frame update
     void Start()
@@ -21,14 +25,16 @@ public class MainMenuScript : MonoBehaviour
     {
         personnalisationMenu.SetActive(false);
         optionMenu.SetActive(true);
-        gameObject.SetActive(false);
+        FindObjectOfType<AudioManager>().play("transition1");
     }
 
     public void MainMenuToOnePlayer()
     {
         personnalisationMenu.SetActive(false);
         playerOneMenu.SetActive(true);
-        gameObject.SetActive(false);
+        animationRotation = true;
+        FindObjectOfType<AudioManager>().play("transition2");
+     //   gameObject.SetActive(false);
     }
 
     public void MainMenuToPersonnalisation()
@@ -37,6 +43,28 @@ public class MainMenuScript : MonoBehaviour
         personnalisationMenu.SetActive(true);
         gameObject.SetActive(false);
         
+    }
+
+     void FixedUpdate()
+    {
+        if (animationRotation)
+        {
+            time += Time.fixedDeltaTime;
+            double alpha = 6 * Math.Pow(time, 5) - 15 * Math.Pow(time, 4) + 10 * Math.Pow(time, 3);
+            float position = (float)(1 - alpha) * 90;
+           // print(position);
+            float actualRotation=ancreOnePlayer.transform.rotation.z*100;
+            float rotation = position-actualRotation;
+            print(rotation);
+            ancreOnePlayer.transform.Rotate(0,0,rotation);
+            //print(ancreOnePlayer.transform.rotation.z);
+            if (ancreOnePlayer.transform.rotation.z < 0)
+            {
+                ancreOnePlayer.transform.rotation=Quaternion.identity;
+                animationRotation = false;
+                time = 0;
+            }
+        }
     }
 
     public void MainMenuToTwoPlayer()

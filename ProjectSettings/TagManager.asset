@@ -9,6 +9,8 @@ TagManager:
   - NameIA
   - Puppet
   - Custom
+  - CustomPad
+  - component
   layers:
   - Default
   - TransparentFX

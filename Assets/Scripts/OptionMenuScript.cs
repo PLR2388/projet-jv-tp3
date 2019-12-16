@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +14,9 @@ public class OptionMenuScript : MonoBehaviour
     public void OptionMenuToMainMenu()
     {
         mainMenu.SetActive(true);
-        gameObject.SetActive(false);
+        GetComponent<Animator>().SetTrigger("retour");
+        FindObjectOfType<AudioManager>().play("transition1");
+        StartCoroutine(deplacement());
     }
 
     void OnEnable()
@@ -29,6 +32,11 @@ public class OptionMenuScript : MonoBehaviour
         DropDown1.AddOptions(list);
         DropDown2.AddOptions(list);
     }
+    
 
-
+    IEnumerator deplacement()
+    {
+        yield return new WaitForSeconds(0.2f);
+        gameObject.SetActive(false);
+    }
 }

@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ChangeCustom : MonoBehaviour
 {
     public GameObject PadCustom;
     public GameObject mainMenu;
-    public GameObject ConvDescript;
     public Color[] Colors =
     {
         Color.black, Color.blue, Color.cyan, Color.gray, Color.green, Color.magenta, Color.red, Color.white,
@@ -17,7 +17,8 @@ public class ChangeCustom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PadCustom = GameObject.FindGameObjectWithTag("CustomPad");
+
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class ChangeCustom : MonoBehaviour
         
     }
 
-    public void clickGauche()
+    public void CouleurMoins()
     {
         i--;
         if (i < 0)
@@ -37,17 +38,40 @@ public class ChangeCustom : MonoBehaviour
         PadCustom.GetComponent<Renderer>().material.color = Colors[(i % Colors.Length)];
     }
     
-    public void clickDroit()
+    public void CouleurPlus()
     {
         i++;
         print(i%Colors.Length);
         PadCustom.GetComponent<Renderer>().material.color = Colors[(i % Colors.Length)];
     }
+    
+    public void TailleMoins()
+    { //11341.56
+        if (PadCustom.transform.localScale.z > 11341.56)
+        {
+            PadCustom.transform.localScale=new Vector3(PadCustom.transform.localScale.x,PadCustom.transform.localScale.y,PadCustom.transform.localScale.z-1000f);
+        }
+    }
+    
+    public void TaillePlus()
+    {
+        if (PadCustom.transform.localScale.z < 31341.56)
+        {
+            PadCustom.transform.localScale=new Vector3(PadCustom.transform.localScale.x,PadCustom.transform.localScale.y,PadCustom.transform.localScale.z+1000f);
+        }
+    }
 
     public void ValideObject()
     {
-        ConvDescript.GetComponent<ControlSettingSc>().customPad = PadCustom;
         mainMenu.SetActive(true);
         gameObject.SetActive(false);
     }
+
+    public void Retour()
+    {
+        mainMenu.SetActive(true);
+        gameObject.SetActive(false);
+    }
+    
+
 }

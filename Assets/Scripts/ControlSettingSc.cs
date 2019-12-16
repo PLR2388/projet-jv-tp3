@@ -16,7 +16,7 @@ public class ControlSettingSc : MonoBehaviour
     public Text InputFeildText;
     
     public int level; //Permet de savoir quel IA déclencher
-    public GameObject customPad;
+   
 
     public bool Player1AxisMode = false;
     public bool Player2AxisMode = false;

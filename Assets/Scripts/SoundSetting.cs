@@ -10,7 +10,7 @@ public class SoundSetting : MonoBehaviour
     public Slider sliderFolley;
     private AudioManager audioManager;
     public string BackGroundMusic;
-    private string foley = null;
+    private string foley = "";
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -39,6 +39,9 @@ public class SoundSetting : MonoBehaviour
         audioManager.setMusicVolume("puckHit", sliderSFX.value);
         audioManager.setMusicVolume("goal", sliderSFX.value);
         audioManager.setMusicVolume("WallHit", sliderSFX.value);
+        
+        audioManager.setMusicVolume("transition1",sliderSFX.value);
+        audioManager.setMusicVolume("transition2",sliderSFX.value);
     }
 
     public void Fooley()

@@ -109,11 +109,16 @@ public class Goal : MonoBehaviour
 
     IEnumerator BackMainMenu()
     {
-        yield return new WaitUntil(() => Input.anyKey);
-        FindObjectOfType<AudioManager>().switchScene("BattleMainTheme", "MainTheme");
         string sameName = SceneManager.GetActiveScene().name;
+        if (sameName == "OnePlayer" && ResultJ1.text=="Tu as gagne!") FindObjectOfType<AudioManager>().switchScene("BattleMainTheme", "victory");
+        else if (sameName == "OnePlayer" && ResultJ1.text == "Tu as perdu!")
+        {
+            FindObjectOfType<AudioManager>().switchScene("BattleMainTheme", "defeat");
+        }
+        yield return new WaitUntil(() => Input.anyKey);
         if (sameName == "OnePlayer" && ResultJ1.text=="Tu as gagne!")
         {
+            FindObjectOfType<AudioManager>().switchScene("victory", "MainTheme");
             string path = Application.persistentDataPath + "\\progression.txt";
             switch (NameIA.text)
             {
@@ -131,6 +136,10 @@ public class Goal : MonoBehaviour
                     break;
             }
             
+        }
+        else if (sameName == "OnePlayer" && ResultJ1.text == "Tu as perdu!")
+        {
+            FindObjectOfType<AudioManager>().switchScene("defeat", "MainTheme");
         }
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MenuScene", LoadSceneMode.Additive);
         // Wait until the asynchronous scene fully loads

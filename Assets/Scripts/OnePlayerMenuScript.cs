@@ -15,17 +15,36 @@ public class OnePlayerMenuScript : MonoBehaviour
     public GameObject IA3;
     public GameObject IA4;
     public GameObject IA5;
-    
+    private bool animationRotation=false;
+    private float time=0f;
+    public GameObject ancreOnePlayer;
     
     public void PlayerOneMenuToMainMenu()
     {
         mainMenu.SetActive(true);
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        FindObjectOfType<AudioManager>().play("transition2");
+        animationRotation = true;
     }
 
     public void PlayerOneMenuToPersonne()
     {
         StartCoroutine(LoadPersonne());
+    }
+    
+    void FixedUpdate()
+    {
+        if (animationRotation)
+        {
+            
+            float value = 90 * Time.fixedDeltaTime;
+            ancreOnePlayer.transform.Rotate(0,0,value);
+            if (ancreOnePlayer.transform.rotation.z > 0.895f)
+            {
+          
+                animationRotation = false;
+            }
+        }
     }
     
     IEnumerator LoadPersonne()
