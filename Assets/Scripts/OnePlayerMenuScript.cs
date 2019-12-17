@@ -41,8 +41,8 @@ public class OnePlayerMenuScript : MonoBehaviour
             ancreOnePlayer.transform.Rotate(0,0,value);
             if (ancreOnePlayer.transform.rotation.z > 0.895f)
             {
-          
                 animationRotation = false;
+                gameObject.SetActive(false);
             }
         }
     }

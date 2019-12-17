@@ -14,10 +14,10 @@ public class SoundSetting : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        foley = FindObjectOfType<Fooley>().foley;
         audioManager = FindObjectOfType<AudioManager>();
         sliderMusic.value = audioManager.getMusicVolume(BackGroundMusic);
         sliderSFX.value = audioManager.getMusicVolume("puckHit");
+        foley = FindObjectOfType<Fooley>().foley;
         sliderFolley.value = audioManager.getMusicVolume(foley);
 
        
