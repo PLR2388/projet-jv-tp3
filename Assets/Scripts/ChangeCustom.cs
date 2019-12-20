@@ -185,12 +185,6 @@ public class ChangeCustom : MonoBehaviour
         pad2.GetComponent<MeshFilter>().mesh.RecalculateNormals();
         pad2.transform.position=new Vector3(143,68,937);
         pad2.SetActive(false);
-	    
-	    
-	    
-	   
-	    
-
     }
     
 
