@@ -39,6 +39,9 @@ public class MovePadP1 : MonoBehaviour
         moveRight = controlSettingObject.GetComponent<ControlSettingSc>().player1Right;
         moveBump = controlSettingObject.GetComponent<ControlSettingSc>().player1Bump;
         AxisGamePadPlayer1 = controlSettingObject.GetComponent<ControlSettingSc>().Player1AxisMode;
+
+      
+        
         if (!AxisGamePadPlayer1)
         {
             MoveLeftDownDelegateMethode = Input.GetKeyDown;
@@ -102,8 +105,24 @@ public class MovePadP1 : MonoBehaviour
 
     void FixedUpdate()
     {
-  
-        transform.Translate(0, translationY * Time.fixedDeltaTime, 0);
+
+        if (GetComponent<MeshFilter>().mesh.name == "Pad3 Instance")
+        {
+            transform.Translate(0, 0, -translationY * Time.fixedDeltaTime);
+            limiteGauche = -13.15f;
+            limiteDroite = -11.585f;
+        }
+        else if (GetComponent<MeshFilter>().mesh.name == "Pad2 Instance")
+        {
+            transform.Translate(0, 0, -translationY * Time.fixedDeltaTime);
+            limiteGauche = -11.85f;
+            limiteDroite = -10.47f;
+        }
+        else
+        {
+            transform.Translate(0, translationY * Time.fixedDeltaTime, 0);
+        }
+        
         if (transform.position.z <= limiteGauche) //Empêcher d'aller trop loin
         {
             transform.position=new Vector3(transform.position.x,transform.position.y,limiteGauche);

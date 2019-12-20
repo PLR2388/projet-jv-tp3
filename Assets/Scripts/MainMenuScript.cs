@@ -55,7 +55,6 @@ public class MainMenuScript : MonoBehaviour
            // print(position);
             float actualRotation=ancreOnePlayer.transform.rotation.z*100;
             float rotation = position-actualRotation;
-            print(rotation);
             ancreOnePlayer.transform.Rotate(0,0,rotation);
             //print(ancreOnePlayer.transform.rotation.z);
             if (ancreOnePlayer.transform.rotation.z < 0)
