@@ -63,7 +63,6 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       
         /**But du joueur 1**/
         if (other.transform.position.x < milieuTerrain)
         {

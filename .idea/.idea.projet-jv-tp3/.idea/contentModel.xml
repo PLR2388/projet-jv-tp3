@@ -28,7 +28,9 @@
           <e p="Noeud.cs" t="Include" />
           <e p="OnePlayerMenuScript.cs" t="Include" />
           <e p="OptionMenuScript.cs" t="Include" />
-          <e p="PadCustom.cs" t="Include" />
+          <e p="PadCustom1.cs" t="Include" />
+          <e p="PadCustom2.cs" t="Include" />
+          <e p="PadCustom3.cs" t="Include" />
           <e p="PauseMenuScript.cs" t="Include" />
           <e p="Pooling.cs" t="Include" />
           <e p="PoolObjectLive.cs" t="Include" />

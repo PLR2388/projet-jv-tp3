@@ -8,9 +8,7 @@ using UnityEngine.UI;
 public class ChangeCustom : MonoBehaviour
 {
     public GameObject PadCustom;
-    public GameObject sphere;
-    public GameObject nouveau;
-    public GameObject affiche;
+    public GameObject pad1;
     public GameObject pad2;
     public GameObject pad3;
     public GameObject pad3Top;
@@ -48,8 +46,6 @@ public class ChangeCustom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-	    affiche = new GameObject();
-	    affiche = GameObject.FindGameObjectWithTag("CustomPad");
 	    Mesh pad = PadCustom.GetComponent<MeshFilter>().mesh;
 	    t1 = new int[pad.triangles.Length / 2];
 	    t2 = new int[pad.triangles.Length / 2];
@@ -58,8 +54,9 @@ public class ChangeCustom : MonoBehaviour
 	    t1new = new int[pad.triangles.Length / 2];
 	    t2new = new int[pad.triangles.Length / 2];
 	    nouveau2 = createCone();
-	    print(nouveau2.vertices);
 	    int k1 = 0, k2 = 0;
+	    
+	    //Creation du haut du pad3
 	    pad3Top.GetComponent<MeshFilter>().mesh.Clear();
 	    pad3Top.GetComponent<MeshFilter>().mesh = nouveau2;
 	    pad3Top.GetComponent<MeshRenderer>().material.color = Color.cyan;
@@ -71,7 +68,7 @@ public class ChangeCustom : MonoBehaviour
 
 
 
-	    pad.subMeshCount = 2;
+	    //pad.subMeshCount = 2;
 
 	    //On récupérer uniquement les vertex qui serviront pour les 2 morceaux du pad en prenant les indices des triangles sans les doublons
 	    for (int i = 0; i < pad.triangles.Length / 2; i++)
@@ -156,13 +153,13 @@ public class ChangeCustom : MonoBehaviour
 
 
 		//Mise à jour de l'affichage
-        affiche.GetComponent<MeshFilter>().mesh.Clear();
-        affiche.GetComponent<MeshFilter>().mesh.vertices = PadCustom.GetComponent<MeshFilter>().mesh.vertices;
-        affiche.GetComponent<MeshFilter>().mesh.triangles = PadCustom.GetComponent<MeshFilter>().mesh.triangles;
-        affiche.GetComponent<MeshFilter>().mesh.subMeshCount = 2;
-        affiche.GetComponent<MeshFilter>().mesh.SetTriangles(t1,0);
-        affiche.GetComponent<MeshFilter>().mesh.SetTriangles(t2,1);
-        affiche.GetComponent<MeshFilter>().mesh.RecalculateNormals();
+        pad1.GetComponent<MeshFilter>().mesh.Clear();
+        pad1.GetComponent<MeshFilter>().mesh.vertices = PadCustom.GetComponent<MeshFilter>().mesh.vertices;
+        pad1.GetComponent<MeshFilter>().mesh.triangles = PadCustom.GetComponent<MeshFilter>().mesh.triangles;
+        pad1.GetComponent<MeshFilter>().mesh.subMeshCount = 2;
+        pad1.GetComponent<MeshFilter>().mesh.SetTriangles(t1,0);
+        pad1.GetComponent<MeshFilter>().mesh.SetTriangles(t2,1);
+        pad1.GetComponent<MeshFilter>().mesh.RecalculateNormals();
         
     
 
@@ -243,7 +240,7 @@ public class ChangeCustom : MonoBehaviour
         switch (k%3)
         {
 	        case 0:
-		        affiche.GetComponent<MeshRenderer>().materials[1].color = Colors1[(i % Colors1.Length)];
+		        pad1.GetComponent<MeshRenderer>().materials[1].color = Colors1[(i % Colors1.Length)];
 		        break;
 	        case 1:
 		        pad2.GetComponent<MeshRenderer>().materials[1].color = Colors1[(i % Colors1.Length)];
@@ -262,7 +259,7 @@ public class ChangeCustom : MonoBehaviour
         switch (k%3)
         {
 	        case 0:
-		        affiche.GetComponent<MeshRenderer>().materials[1].color = Colors1[(i % Colors1.Length)];
+		        pad1.GetComponent<MeshRenderer>().materials[1].color = Colors1[(i % Colors1.Length)];
 		        break;
 	        case 1:
 		        pad2.GetComponent<MeshRenderer>().materials[1].color = Colors1[(i % Colors1.Length)];
@@ -285,7 +282,7 @@ public class ChangeCustom : MonoBehaviour
 	    switch (k%3)
 	    {
 		    case 0:
-			    affiche.GetComponent<MeshRenderer>().materials[0].color = Colors2[(j % Colors2.Length)];
+			    pad1.GetComponent<MeshRenderer>().materials[0].color = Colors2[(j % Colors2.Length)];
 			    break;
 		    case 1:
 			    pad2.GetComponent<MeshRenderer>().materials[0].color = Colors2[(j % Colors2.Length)];
@@ -305,7 +302,7 @@ public class ChangeCustom : MonoBehaviour
 	    switch (k%3)
 	    {
 		    case 0:
-			    affiche.GetComponent<MeshRenderer>().materials[0].color = Colors2[(j % Colors2.Length)];
+			    pad1.GetComponent<MeshRenderer>().materials[0].color = Colors2[(j % Colors2.Length)];
 			    break;
 		    case 1:
 			    pad2.GetComponent<MeshRenderer>().materials[0].color = Colors2[(j % Colors2.Length)];
@@ -325,10 +322,10 @@ public class ChangeCustom : MonoBehaviour
 	    switch (k%3)
 	    {
 		    case 0:
-			    if (affiche.transform.localScale.z > 11341.56)
+			    if (pad1.transform.localScale.z > 11341.56)
 			    {
-				    affiche.transform.localScale = new Vector3(affiche.transform.localScale.x, affiche.transform.localScale.y,
-					    affiche.transform.localScale.z - 1000f);
+				    pad1.transform.localScale = new Vector3(pad1.transform.localScale.x, pad1.transform.localScale.y,
+					    pad1.transform.localScale.z - 1000f);
 			    }
 			    break;
 		    case 1:
@@ -354,9 +351,9 @@ public class ChangeCustom : MonoBehaviour
 	         switch (k%3)
              {
 	             case 0:
-		             if (affiche.transform.localScale.z < 31341.56)
+		             if (pad1.transform.localScale.z < 31341.56)
 		             {
-			             affiche.transform.localScale=new Vector3(affiche.transform.localScale.x,affiche.transform.localScale.y,affiche.transform.localScale.z+1000f);
+			             pad1.transform.localScale=new Vector3(pad1.transform.localScale.x,pad1.transform.localScale.y,pad1.transform.localScale.z+1000f);
 		             }
 		             break;
 	             case 1:
@@ -390,21 +387,21 @@ public class ChangeCustom : MonoBehaviour
 				pad2.tag = "Untagged";
 				pad2.SetActive(false);
 				pad3.SetActive(false);
-				affiche.SetActive(true);
-				affiche.tag = "CustomPad";
+				pad1.tag = "CustomPad";
+				pad1.SetActive(true);
 				break;
 			case 1:
 				pad3.tag = "Untagged";
-				affiche.tag = "Untagged";
+				pad1.tag = "Untagged";
 				pad3.SetActive(false);
-				affiche.SetActive(false);
-				pad2.SetActive(true);
+				pad1.SetActive(false);
 				pad2.tag = "CustomPad";
+				pad2.SetActive(true);
 				break;
 			case 2:
-				affiche.tag = "Untagged";
+				pad1.tag = "Untagged";
 				pad2.tag = "Untagged";
-				affiche.SetActive(false);
+				pad1.SetActive(false);
 				pad2.SetActive(false);
 				pad3.SetActive(true);
 				pad3.tag = "CustomPad";
@@ -423,21 +420,21 @@ public class ChangeCustom : MonoBehaviour
 			     pad2.tag = "Untagged";
 			     pad2.SetActive(false);
 			     pad3.SetActive(false);
-			     affiche.SetActive(true);
-			     affiche.tag = "CustomPad";
+			     pad1.SetActive(true);
+			     pad1.tag = "CustomPad";
 			     break;
 		     case 1:        
 			     pad3.tag = "Untagged";
-			     affiche.tag = "Untagged";
+			     pad1.tag = "Untagged";
 			     pad3.SetActive(false);
-			     affiche.SetActive(false);
+			     pad1.SetActive(false);
 			     pad2.SetActive(true);
 			     pad2.tag = "CustomPad";
 			     break;
 		     case 2:        
-			     affiche.tag = "Untagged";
+			     pad1.tag = "Untagged";
 			     pad2.tag = "Untagged";
-			     affiche.SetActive(false);
+			     pad1.SetActive(false);
 			     pad2.SetActive(false);
 			     pad3.SetActive(true);
 			     pad3.tag = "CustomPad";
