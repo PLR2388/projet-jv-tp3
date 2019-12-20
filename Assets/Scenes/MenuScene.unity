@@ -3798,7 +3798,7 @@ GameObject:
   - component: {fileID: 490347889}
   m_Layer: 0
   m_Name: Pad1
-  m_TagString: CustomPad
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6189,7 +6189,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 912532682}
-        m_MethodName: ValideObject
+        m_MethodName: Retour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6930,6 +6930,7 @@ MonoBehaviour:
   pad2Top: {fileID: 2140784452}
   pad2Bottom: {fileID: 1203363784}
   mainMenu: {fileID: 1438676787}
+  inCaseOfReturn: {fileID: 0}
   nouveau1: {fileID: 0}
   nouveau2: {fileID: 0}
   alpha: 0

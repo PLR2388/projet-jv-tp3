@@ -14,7 +14,7 @@ public class ApplyCustom : MonoBehaviour
         GameObject pad = GameObject.FindGameObjectWithTag("CustomPad");
         switch (pad.name)
         {
-            case "affiche":
+            case "Pad1":
                 if (pad.GetComponent<MeshFilter>().mesh.vertices.Length != 0)
                 {
                     float scaleZ = 15.68897f*pad.transform.localScale.z/11341.56f;
