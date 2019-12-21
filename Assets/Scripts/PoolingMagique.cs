@@ -9,19 +9,23 @@ public class PoolingMagique : MonoBehaviour
     private List<GameObject> pool = new List<GameObject>();
     public GameObject referenceSpwan;
     public float z = 0;
+
+    public GameObject table;
     // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < NbPoolObject; i++)
         {
             GameObject obj = Instantiate(PoolObject, gameObject.transform);
+            obj.GetComponent<AncreMagie>().setTable(table);
             pool.Add(obj);
         }
     }
 
     void Update()
     {
-        referenceSpwan = GameObject.FindGameObjectWithTag("Puck"); 
+        referenceSpwan = GameObject.FindGameObjectWithTag("Puck");
+        gameObject.transform.position = new Vector3(referenceSpwan.transform.position.x,z, referenceSpwan.transform.position.z);
     }
 
     public void spawnPoolObject(GameObject reference)
@@ -33,7 +37,7 @@ public class PoolingMagique : MonoBehaviour
                 float x = Random.Range(-2f, 2f);
                 float y = Random.Range(-2f, 2f);
                 obj.SetActive(true);
-                obj.transform.position = new Vector3(referenceSpwan.transform.position.x + x, referenceSpwan.transform.position.y + y, z);
+                //obj.transform.position = new Vector3(x, z, y);
                 break;
             }
         }

@@ -10,6 +10,7 @@
           <e p="_README.txt" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="AncreMagie.cs" t="Include" />
           <e p="AncrePool.cs" t="Include" />
           <e p="ApplyCustom.cs" t="Include" />
           <e p="AudioManager.cs" t="Include" />
@@ -20,6 +21,7 @@
           <e p="Goal.cs" t="Include" />
           <e p="IACharacteristic.cs" t="Include" />
           <e p="loading.cs" t="Include" />
+          <e p="magicPoolLiving.cs" t="Include" />
           <e p="MainMenuScript.cs" t="Include" />
           <e p="MovePadP1.cs" t="Include" />
           <e p="MovePadP2.cs" t="Include" />
