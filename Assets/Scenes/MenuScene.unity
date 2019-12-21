@@ -1435,7 +1435,6 @@ MonoBehaviour:
   PoolObject: {fileID: 2758918954359339784, guid: fafa92c307907444dbb9a899d4b494fb,
     type: 3}
   FrequancySpawn: 0.001
-  FollowMouse: 1
 --- !u!4 &233242842
 Transform:
   m_ObjectHideFlags: 0
@@ -4111,6 +4110,8 @@ MonoBehaviour:
     SpacialSoundLeftRight: 0
     SpacialSoundCloseFar: 0
     loop: 0
+  audioMixer: {fileID: 6141880267724258223, guid: b69b2b89a05b24243901fa89c0ac6091,
+    type: 2}
 --- !u!4 &529984064
 Transform:
   m_ObjectHideFlags: 0

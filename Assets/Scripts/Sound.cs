@@ -93,4 +93,31 @@ public class Sound
             audioSource.spatialBlend = distance;
         }
     }
+
+    public void PitchZeroHuit(float PM, string name)
+    {
+        if (audioClip.name.Equals(name))
+        {
+            float current;
+            audioSource.outputAudioMixerGroup.audioMixer.GetFloat("Pitch", out current);
+            current += PM * 0.08f;
+            audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", current);
+        }
+    }
+    
+    public void resetPitch(string name)
+    {
+        if (audioClip.name.Equals(name))
+        {
+            audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f);
+        }
+    }
+
+    public void setAudioMixer(string battlemaintheme, AudioMixerGroup audioMixer)
+    {
+        if (audioClip.name.Equals(battlemaintheme))
+        {
+            audioSource.outputAudioMixerGroup = audioMixer;
+        }
+    }
 }

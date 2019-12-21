@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] soundList;
     private static AudioManager instance;
+
+    public AudioMixerGroup audioMixer;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,14 @@ public class AudioManager : MonoBehaviour
         foreach(Sound sound in soundList)
         {
             sound.SetAudioSource(gameObject.AddComponent<AudioSource>());
+            setAudioMixer("BattleMainTheme", sound);
         }
         play("MainTheme");
+    }
+
+    private void setAudioMixer(string battlemaintheme, Sound sound1)
+    {
+        sound1.setAudioMixer(battlemaintheme, audioMixer);
     }
 
     // Update is called once per frame
@@ -132,6 +140,22 @@ public class AudioManager : MonoBehaviour
         foreach (Sound sound in soundList)
         {
             sound.SpacialFooley(name, distance, place);
+        }
+    }
+    
+    public void pitchChange(string name, float PM)
+    {
+        foreach (Sound sound in soundList)
+        {
+            sound.PitchZeroHuit(PM, name);
+        }
+    }
+    
+    public void resetPitch(string name)
+    {
+        foreach (Sound sound in soundList)
+        {
+            sound.resetPitch(name);
         }
     }
 }

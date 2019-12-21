@@ -84,6 +84,7 @@ public class Goal : MonoBehaviour
             pupet.GetComponent<Animator>().SetTrigger("defeat");
 
             FindObjectOfType<AudioManager>().play("goal");
+            FindObjectOfType<AudioManager>().pitchChange("BattleMainTheme", 1f);
             GameObject nouveau=Instantiate(Puck,positionInit,Quaternion);
             Destroy(Puck);
             Puck = nouveau;
@@ -96,6 +97,7 @@ public class Goal : MonoBehaviour
         {
             pupet = getPuppet();
             pupet.GetComponent<Animator>().SetTrigger("win");
+            FindObjectOfType<AudioManager>().pitchChange("BattleMainTheme", -1f);
             
             FindObjectOfType<AudioManager>().play("goal");
             GameObject nouveau=Instantiate(Puck,positionInit,Quaternion);
@@ -124,6 +126,7 @@ public class Goal : MonoBehaviour
     IEnumerator BackMainMenu()
     {
         string sameName = SceneManager.GetActiveScene().name;
+        FindObjectOfType<AudioManager>().resetPitch("BattleMainTheme");
         if (sameName == "OnePlayer" && ResultJ1.text=="Tu as gagne!") FindObjectOfType<AudioManager>().switchScene("BattleMainTheme", "victory");
         else if (sameName == "OnePlayer" && ResultJ1.text == "Tu as perdu!")
         {
