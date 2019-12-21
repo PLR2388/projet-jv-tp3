@@ -655,6 +655,15 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "SphereCollider",
+            "fullManagedTypeName": "UnityEngine.SphereCollider",
+            "moduleName": "Physics",
+            "usedInScenes": [
+                "Assets/Scenes/OnePlayer.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "TerrainCollider",
             "fullManagedTypeName": "UnityEngine.TerrainCollider",
             "moduleName": "TerrainPhysics",
@@ -861,6 +870,13 @@
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
             "fullManagedTypeName": "Pooling",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "PoolingMagique",
             "moduleName": "",
             "usedInScenes": []
         },

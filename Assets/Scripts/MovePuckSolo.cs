@@ -57,6 +57,7 @@ public class MovePuckSolo : MonoBehaviour
         }
         else
         {
+            FindObjectOfType<PoolingMagique>().spawnPoolObject(gameObject);
             if (velocity.x<=0 && transform.position.x < milieuTerrain)
             {
                 Noeud depart=new Noeud(Math.Round(gameObject.transform.position.z,nombreDecimal),Math.Round(gameObject.transform.position.x,nombreDecimal));

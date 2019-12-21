@@ -1435,6 +1435,7 @@ MonoBehaviour:
   PoolObject: {fileID: 2758918954359339784, guid: fafa92c307907444dbb9a899d4b494fb,
     type: 3}
   FrequancySpawn: 0.001
+  FollowMouse: 1
 --- !u!4 &233242842
 Transform:
   m_ObjectHideFlags: 0

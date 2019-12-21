@@ -9,24 +9,26 @@ public class IACharacteristic : MonoBehaviour
     private GameObject controlSettingObject;
     public float bordDroit = -13.2f;
     public float bordGauche = -12f;
+    public GameObject[] listPuppet;
+    public int ai = 0;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] listPuppet = GameObject.FindGameObjectsWithTag("Puppet");
-        controlSettingObject = GameObject.FindGameObjectsWithTag("ControlSettingObject")[0];
-        switch (controlSettingObject.GetComponent<ControlSettingSc>().level)
+        //listPuppet = GameObject.FindGameObjectsWithTag("Puppet");
+        controlSettingObject = GameObject.FindGameObjectWithTag("ControlSettingObject");
+        ai = controlSettingObject.GetComponent<ControlSettingSc>().level;
+        switch (ai)
         {
             case 0:
                 gameObject.GetComponent<RandomMoveIA>().enabled = false;
                 gameObject.GetComponent<SmartIA>().enabled = false;
                 gameObject.GetComponent<ScriptedIA>().enabled = false;
-                for (int i = 0; i < listPuppet.Length; i++)
+                foreach (GameObject pupet in listPuppet)
                 {
-                    if (listPuppet[i].name != "Personne")
-                    {
-                        listPuppet[i].SetActive(false);
-                    }
+                    pupet.SetActive(false);
                 }
+                listPuppet[0].SetActive(true);
+                gameObject.SetActive(false);
                 break;
             case 1:
                 gameObject.GetComponent<RandomMoveIA>().enabled = false;

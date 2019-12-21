@@ -52,6 +52,7 @@
 		<type fullname="UnityEngine.SkinnedMeshRenderer" preserve="nothing"/>
 		<type fullname="UnityEngine.SpriteRenderer" preserve="nothing"/>
 		<type fullname="UnityEngine.BoxCollider" preserve="nothing"/>
+		<type fullname="UnityEngine.SphereCollider" preserve="nothing"/>
 		<type fullname="UnityEngine.TerrainCollider" preserve="nothing"/>
 		<type fullname="UnityEngine.Avatar" preserve="nothing"/>
 		<type fullname="UnityEngine.TerrainData" preserve="nothing"/>
@@ -82,6 +83,7 @@
 		<type fullname="PauseMenuScript" preserve="nothing"/>
 		<type fullname="PoolObjectLive" preserve="nothing"/>
 		<type fullname="Pooling" preserve="nothing"/>
+		<type fullname="PoolingMagique" preserve="nothing"/>
 		<type fullname="RandomMoveIA" preserve="nothing"/>
 		<type fullname="ScriptedIA" preserve="nothing"/>
 		<type fullname="SmartIA" preserve="nothing"/>

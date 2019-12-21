@@ -16,8 +16,9 @@ public class Goal : MonoBehaviour
      public GameObject Puck;
 
      public GameObject pupet;
-     
-     private GameObject controlSettingObject;
+    public GameObject[] pupets;
+
+    private GameObject controlSettingObject;
      public GameObject PadIA;
      private int scoreJ1;
      private int scoreJ2;
@@ -38,12 +39,13 @@ public class Goal : MonoBehaviour
         scoreJ1 = 0;
         scoreJ2 = 0;
         pupet = GameObject.FindGameObjectWithTag("Puppet");
+        pupets = GameObject.FindGameObjectsWithTag("Puppet");
         controlSettingObject = GameObject.FindGameObjectWithTag("ControlSettingObject");
         switch (controlSettingObject.GetComponent<ControlSettingSc>().level)
         {
             case 0:
                 NameIA.text = "Personne";
-                PadIA.SetActive(false);
+                
                 break;
             case 1:
                 NameIA.text = "Raoul";
@@ -61,13 +63,26 @@ public class Goal : MonoBehaviour
 
     }
 
+    private GameObject getPuppet()
+    {
+        foreach (GameObject puppetfind in pupets)
+        {
+            if (puppetfind.activeSelf)
+            {
+                return puppetfind;
+            }
+        }
+        return null;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         /**But du joueur 1**/
         if (other.transform.position.x < milieuTerrain)
         {
+            pupet = getPuppet();
             pupet.GetComponent<Animator>().SetTrigger("defeat");
-            
+
             FindObjectOfType<AudioManager>().play("goal");
             GameObject nouveau=Instantiate(Puck,positionInit,Quaternion);
             Destroy(Puck);
@@ -79,7 +94,7 @@ public class Goal : MonoBehaviour
         /**But du joueur 2 ou de l'IA**/
         if (other.transform.position.x > milieuTerrain)
         {
-
+            pupet = getPuppet();
             pupet.GetComponent<Animator>().SetTrigger("win");
             
             FindObjectOfType<AudioManager>().play("goal");

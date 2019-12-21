@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Paul-Louis\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Paul-Louis\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_projet-jv-tp3.1721445008.00" t="ExcludeRecursive" />
-    <e p="D:\enssat\3A\Session Automne\Programmation de jeux vidéo\Unity projects\projet-jv-tp3" t="IncludeRecursive">
+    <e p="C:\Users\belan\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\belan\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_projet-jv-tp3.265532598.00" t="ExcludeRecursive" />
+    <e p="C:\Users\belan\Desktop\code\projet-jv-tp3" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="AncrePool.cs" t="Include" />
         <e p="Pixel Font - Tripfive" t="Include">
           <e p="_README.txt" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="AncrePool.cs" t="Include" />
           <e p="ApplyCustom.cs" t="Include" />
           <e p="AudioManager.cs" t="Include" />
           <e p="BackGroundSetting.cs" t="Include" />
@@ -33,6 +33,7 @@
           <e p="PadCustom3.cs" t="Include" />
           <e p="PauseMenuScript.cs" t="Include" />
           <e p="Pooling.cs" t="Include" />
+          <e p="PoolingMagique.cs" t="Include" />
           <e p="PoolObjectLive.cs" t="Include" />
           <e p="RandomMoveIA.cs" t="Include" />
           <e p="ScriptedIA.cs" t="Include" />
