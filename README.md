@@ -1,6 +1,18 @@
-# projet-jv-tp3
+# Projet JV TP3
 
-Il s'agit d'un projet de jeu vidéo de air hockey réalisé dans le cadre du cours de Programmation de jeux vidéo avec un autre étudiant à l'Université Laval. 
-Il a été réalisé grâce au moteur de jeu Unity. L'objectif était d'avoir un jeu fonctionnel.
+This is an air hockey video game project developed for the Video Game Programming course in collaboration with another student at Université Laval. The game was created using the Unity game engine with the objective of having a functional game.
 
-Ceci est le code source du jeu. Si vous voulez simplement y jouer, les binaires sont disponibles pour les utilisateurs de Windows à cette adresse : https://gohiu.itch.io/air-hockey-game
+## Description
+
+This repository contains the source code of the game. If you just want to play the game, binaries are available for Windows users at this address: [Air Hockey Game on itch.io](https://gohiu.itch.io/air-hockey-game).
+
+## Installation
+
+To run this application from the source code, follow these steps:
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/PLR2388/projet-jv-tp3.git
+    ```
+2. Open the project in Unity.
+3. Build and run the game.
